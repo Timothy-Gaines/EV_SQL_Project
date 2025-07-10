@@ -42,6 +42,12 @@ ALTER TABLE state_population OWNER TO postgres;
 ALTER TABLE ev_stations     OWNER TO postgres;
 
 
+CREATE TABLE city_population (
+    city          TEXT NOT NULL,
+    state_abbrev  CHAR(2) NOT NULL,
+    pop2024       INT,
+    PRIMARY KEY (city, state_abbrev)
+);
 
 
 -- Insert data into the tables used pgAdmin and Psql to add data to the tables
@@ -51,8 +57,9 @@ ALTER TABLE ev_stations     OWNER TO postgres;
 
 \COPY ev_stations (station_name,street_address,city,state_abbrev,zip,open_date,ev_network,ev_level1_evse_num,ev_level2_evse_num,ev_dc_fast_count,access_days_time,latitude,longitude,ev_pricing,ev_connector_types,facility_type)FROM 'C:\Users\timga\Documents\GitHub\EV_SQL_Project\Data\alt_fuel_stations_(Jun 19 2025)_updated.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
+\COPY city_population(city,state_abbrev,pop2024)FROM 'C:\Users\timga\Documents\GitHub\EV_SQL_Project\Data\City_population.csv' WITH (FORMAT csv, HEADER true, ENCODING 'UTF8');
 
-SELECT * FROM ev_stations
+SELECT * FROM city_population
 LIMIT 10;
 
 
