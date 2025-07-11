@@ -1,0 +1,52 @@
+state_abbrev,top_network,market_share_pct
+AK,Non-Networked,39.1
+AL,ChargePoint Network,56.7
+AR,ChargePoint Network,24.1
+AZ,Tesla,30.6
+CA,ChargePoint Network,25.7
+CO,ChargePoint Network,51.3
+CT,ChargePoint Network,38.4
+DC,Tesla,36.4
+DE,Tesla,32.8
+FL,Tesla,28.2
+GA,ChargePoint Network,50.2
+HI,OpConnect,54.9
+IA,CHARGELAB,25.4
+ID,ChargePoint Network,33.3
+IL,Tesla,19.0
+IN,Tesla,22.9
+KS,ChargePoint Network,31.9
+KY,ChargePoint Network,24.2
+LA,ChargePoint Network,33.3
+MA,ChargePoint Network,54.0
+MD,ChargePoint Network,28.8
+ME,ChargePoint Network,52.8
+MI,ChargePoint Network,38.7
+MN,ZEFNET,26.2
+MO,ChargePoint Network,38.9
+MS,ChargePoint Network,43.2
+MT,Tesla,39.2
+NC,Tesla,25.1
+ND,ChargePoint Network,33.3
+NE,ChargePoint Network,57.1
+NH,ChargePoint Network,33.3
+NJ,ChargePoint Network,29.2
+NM,ChargePoint Network,39.7
+NV,Tesla,46.0
+NY,ChargePoint Network,26.0
+OH,ChargePoint Network,37.0
+OK,FCN,58.1
+OR,ChargePoint Network,36.0
+PA,ChargePoint Network,28.7
+RI,ChargePoint Network,55.1
+SC,ChargePoint Network,22.1
+SD,ChargePoint Network,31.1
+TN,ChargePoint Network,52.1
+TX,ChargePoint Network,27.3
+UT,ChargePoint Network,44.8
+VA,Tesla,25.9
+VT,ChargePoint Network,22.3
+WA,ChargePoint Network,29.8
+WI,ChargePoint Network,20.3
+WV,Tesla,33.3
+WY,Tesla,30.8
