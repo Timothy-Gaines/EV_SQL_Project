@@ -4,7 +4,7 @@ import ParticlesBackground from '../components/ParticlesBackground'
 export default function MainLayout() {
   const navItem = 'px-4 py-2 hover:text-neonStart transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neonB/70 rounded'
   return (
-    <div className="min-h-screen bg-background text-white relative">
+    <div className="min-h-screen bg-surface text-white relative">
       <ParticlesBackground />
       <header className="backdrop-blur-14 bg-white/5 fixed w-full z-10">
         <nav className="max-w-7xl mx-auto flex items-center gap-4 h-14">
