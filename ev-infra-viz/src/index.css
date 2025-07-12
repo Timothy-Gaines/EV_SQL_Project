@@ -28,7 +28,7 @@ a:hover {
 
 body {
   margin: 0;
-  @apply bg-surface text-white;
+  /* background handled via body class in index.html */
   min-width: 320px;
   min-height: 100vh;
 }

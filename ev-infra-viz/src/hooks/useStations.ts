@@ -20,5 +20,5 @@ export interface StationsGeo {
 }
 
 export const useStations = () => {
-  return useSWR<StationsGeo>('data/stations.geo.json', jsonFetcher, { suspense: true })
+  return useSWR<StationsGeo>('/data/stations.geo.json', jsonFetcher, { suspense: true })
 } 

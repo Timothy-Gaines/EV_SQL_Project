@@ -10,5 +10,5 @@ export interface CoverageRow {
 }
 
 export const useCoverage = () => {
-  return useSWR<CoverageRow[]>('data/coverage_scores.json', jsonFetcher, { suspense: true })
+  return useSWR<CoverageRow[]>('/data/coverage_scores.json', jsonFetcher, { suspense: true })
 } 

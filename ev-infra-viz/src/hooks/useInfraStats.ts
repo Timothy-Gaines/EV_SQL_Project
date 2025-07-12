@@ -9,5 +9,5 @@ export interface InfraStats {
 }
 
 export const useInfraStats = () => {
-  return useSWR<InfraStats>('data/infra_totals.json', jsonFetcher, { suspense: true })
+  return useSWR<InfraStats>('/data/infra_totals.json', jsonFetcher, { suspense: true })
 } 
