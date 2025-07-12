@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import './index.css'
 
-const MainLayout = lazy(() => import('./layouts/MainLayout'))
-const Landing = lazy(() => import('./pages/Landing'))
-const CoverageMap = lazy(() => import('./pages/CoverageMap'))
-const Dashboard = lazy(() => import('./pages/Dashboard'))
+const MainLayout = lazy(() => import('./layouts/MainLayout.tsx'))
+const Landing = lazy(() => import('./pages/Landing.tsx'))
+const CoverageMap = lazy(() => import('./pages/CoverageMap.tsx'))
+const Dashboard = lazy(() => import('./pages/Dashboard.tsx'))
 
 const router = createBrowserRouter([
   {
