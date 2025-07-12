@@ -9,9 +9,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        surface: {
-          DEFAULT: "#0D1117"
-        },
+        background: { DEFAULT: "#0D1117" },
+        surface: { DEFAULT: "#0D1117" },
         neonStart: "#00CFFF",
         neonEnd: "#BD00FF",
         neonA: "#00CFFF",
