@@ -11,6 +11,8 @@
 -- Query 1: Statewide split between DC-fast and Level-2 ports
 -- ================================================================
 
+
+
 WITH dc_fast_ports AS (
     -- Sum of DC-fast ports per state
     SELECT
@@ -72,6 +74,7 @@ ORDER BY
 
 -- Query 2: States where ≥80 % of stations are open 24/7
 -- ================================================================
+
 
 WITH state_totals AS (
     -- Total stations per state
@@ -136,6 +139,7 @@ ORDER BY
 
 -- Query 3: Leading DC-fast connector type by U.S. region since 2023
 -- ================================================================
+
 
 WITH filtered_stations AS (
     -- 1) DC-fast stations opened on or after 2023-01-01

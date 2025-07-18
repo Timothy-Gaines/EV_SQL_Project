@@ -194,7 +194,53 @@ LIMIT 5;                                      -- Surface the five most underserv
 
 
 
+/*
+4. Show the number of charging stations per 100 000 people for each state.
+*/
+
+/* 
+   Query 4: Show the number of charging stations per 100 000 people for each state.
+----------------------------------------------------------------- */
+ SELECT
+        ev_stations.state_abbrev,                                             -- State two-letter code
+        SUM(                                                                   -- Total charging ports in the state
+            COALESCE(ev_stations.ev_level1_evse_num,0) +
+            COALESCE(ev_stations.ev_level2_evse_num,0) +
+            COALESCE(ev_stations.ev_dc_fast_count,0)
+        ) AS total_ports,
+        ROUND(                                                                 -- Ports per 100 000 residents
+            SUM(
+              COALESCE(ev_stations.ev_level1_evse_num,0) +
+              COALESCE(ev_stations.ev_level2_evse_num,0) +
+              COALESCE(ev_stations.ev_dc_fast_count,0)
+            )::numeric * 100000 / state_population.popestimate2023,
+        2) AS ports_per_100k
+    FROM
+        ev_stations
+    LEFT JOIN
+        state_population ON ev_stations.state_abbrev = state_population.state_abbrev
+    GROUP BY
+        ev_stations.state_abbrev,                                              -- Group by state
+        state_population.popestimate2023 
 
 
+/*
+5. Show the number of DC-fast charging stations per 100 000 people for each state.
+*/
 
+/* 
+   Query 5: Show the number of DC-fast charging stations per 100 000 people for each state.
+----------------------------------------------------------------- */
 
+SELECT
+        ev_stations.state_abbrev,
+        ROUND(SUM(ev_dc_fast_count)::numeric * 100000 / state_population.popestimate2023,2) AS DC_fast_ports_per_100k
+    FROM
+        ev_stations
+    LEFT JOIN
+        state_population ON ev_stations.state_abbrev = state_population.state_abbrev
+    WHERE
+        ev_dc_fast_count > 0                                                   -- Ignore stations without DC-fast
+    GROUP BY
+        ev_stations.state_abbrev,
+        state_population.popestimate2023

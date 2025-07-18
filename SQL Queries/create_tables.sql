@@ -63,3 +63,4 @@ SELECT * FROM city_population
 LIMIT 10;
 
 
+SELECT current_user;
