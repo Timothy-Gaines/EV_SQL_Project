@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-accent-lime: #ccff00;
+    --color-accent-orange: #ff3f00;
+    --color-accent-purple: #b05cff;
+    --color-accent-pink: #ff0077;
+    --color-accent-cyan: #00e5ff;
+    --color-base-900: #08090a;
+  }
+
+  body {
+    background-color: theme('colors.base.900');
+    background-image: theme('backgroundImage.dots');
+    background-size: theme('backgroundSize.dots');
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #404750 #101214;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  *::-webkit-scrollbar-track {
+    background: #101214;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: #404750;
+    border-radius: 0px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: #5e6773;
+  }
+
+  ::selection {
+    background: rgba(204, 255, 0, 0.4);
+    color: #08090a;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-base-800 border-2 border-base-600 rounded-sm relative;
+  }
+
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: theme('backgroundImage.noise');
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .glass-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .glass-card-hover {
+    @apply bg-base-800 border-2 border-base-600 rounded-sm relative transition-all duration-200;
+    box-shadow: 4px 4px 0px 0px rgba(204, 255, 0, 0.2);
+  }
+
+  .glass-card-hover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: theme('backgroundImage.noise');
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .glass-card-hover > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .glass-card-hover:hover {
+    @apply -translate-y-1 -translate-x-1 border-accent-lime;
+    box-shadow: 6px 6px 0px 0px rgba(204, 255, 0, 1);
+  }
+
+  .nav-link {
+    @apply relative flex items-center gap-3 px-4 py-3 rounded-sm text-txt-secondary text-sm font-display font-medium uppercase tracking-wide transition-all duration-200 cursor-pointer border-2 border-transparent;
+  }
+  .nav-link:hover {
+    @apply text-txt-primary bg-base-700 border-base-600;
+  }
+  .nav-link.active {
+    @apply text-base-900 bg-accent-lime border-accent-lime;
+  }
+
+  .stat-value {
+    @apply text-4xl font-display font-bold tracking-tighter text-txt-primary uppercase;
+  }
+
+  .section-title {
+    @apply text-3xl font-display font-black tracking-tighter text-txt-primary uppercase;
+  }
+
+  .chart-container {
+    @apply w-full;
+  }
+  .chart-container .recharts-cartesian-grid-horizontal line,
+  .chart-container .recharts-cartesian-grid-vertical line {
+    stroke: #2b3036;
+    stroke-dasharray: 0;
+  }
+  .chart-container .recharts-text {
+    fill: #5e6773;
+    font-family: 'Red Hat Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+}
